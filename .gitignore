@@ -1,8 +1,7 @@
 # DXLib ignore by grurq
 /sources/
+/exe/
 Log.txt
-/dat/
-
 # Prerequisites
 *.d
 
