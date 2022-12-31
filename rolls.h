@@ -75,7 +75,7 @@ int winning(int pies[], int sc,int lsc, int flg)
 		gscore += roll[h](pies, &x, &y);
 	}
 	pr_bonus(parent, &x, &y);
-	if (parent)gscore += 30;
+	if (parent)gscore += 10;
 	for (h = 0; h < 9; h++)
 	{
 		pies[h] *= 9;
@@ -330,7 +330,7 @@ int pr_bonus(bool pr, int* x, int* y)
 {
 	if (pr == true)
 	{
-		DrawFormatString(*x, *y, siro,"親ボーナス 　　30");
+		DrawFormatString(*x, *y, siro,"親ボーナス 　　10");
 		*y += 10;
 
 		return 2;
