@@ -159,22 +159,29 @@ void rollpies_preset(int pies[])
 			if (r < 81)lostpies[r] = -(lostpies[r] + 1);
 		}
 	}
+	// 不能牌の指定。GetRandを大きくするほど指定から外れる確率が増えて勝ちにくくなる
 	for (h = 0; h < 3; h++) {
-		r = GetRand(62);
+		r = GetRand(124);
 		if (r < 9 && pies[r] < 81) {
+			//printfDx("%3d%3d\n", pies[r],r);
 			lostpies[pies[r]] = pies[r];
 			pies[r] = ntpie;
 			ntpie += 9;
 		}
 	}
-
-	pie_sort2(pies);
+	// デバッグ用　敵牌の表示
 	/*
-	for (j = 0; j < 9; j++) {
+		pie_sort2(pies);
+	
+		for (j = 0; j < 9; j++) {
 		printfDx("%3d", pies[j]);
 	}
 	printfDx("\n");
 	*/
+
+	
+
+	
 
 }
 void playpies_preset(int pies[])
