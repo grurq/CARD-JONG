@@ -56,7 +56,7 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 		parent = GetRand( 1);
 
 		DrawGraph(160,40, pimgs[10],true);
-		DrawFormatString(160, 300, siro, "リターンキー：プレイ　ESCキー：終了");
+		DrawFormatString(160, 300, siro, "Enterキー：プレイ　ESCキー：終了");
 		DrawFormatString(130, 340, siro, "(c)grurqApps 2021 SOUNDS BY PANICPUMPKIN");
 		DrawFormatString(60, 360, siro, "POWERED BY DX Library Copyright (C) 2001-2021 Takumi Yamada.");
 		while (key == 0) {
@@ -98,11 +98,13 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 					else { parent = 0; }
 					break;
 				case 1:// 人間が勝ち
-					parent = 1;
+					if (parent == 0) { parent = 1; }
+					else { parent = 0; }
 					WaitKey();
 					break;
 				case 2:// 敵が勝ち
-					parent = 0;
+					if (parent == 1) { parent = 0; }
+					else { parent = 1; }
 					WaitKey();
 					break;
 				case 3:// 中断
