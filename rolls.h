@@ -220,15 +220,15 @@ int rl_0(int pies[],int *x,int *y)
 	switch (ponged) {
 	case 2:
 		sprintf_s(doc,30,"%s","二暗刻");
-		sc=20;
+		sc=10;
 		break;
 	case 3:
 		sprintf_s(doc,30, "%s", "三暗刻");
-		sc= 30;
+		sc= 15;
 		break;
 	default:
 		sprintf_s(doc,30, "%s", "アガり");
-		sc= 10;
+		sc= 5;
 		break;
 	}
 	if (sc > 0)rldocs(doc, sc, x, y);
@@ -249,12 +249,12 @@ int rl_1(int pies[], int* x, int* y)
 
 	if (count == 9) {
 		sprintf_s(doc,30, "%s", "1種");
-		sc=180;
+		sc=60;
 	}
 	else if (count == 6)
 	{
 		sprintf_s(doc,30, "%s", "2種");
-		sc=80;
+		sc=30;
 	}
 	}
 	if (sc > 0)rldocs(doc, sc, x, y);
@@ -271,7 +271,7 @@ int rl_2(int pies[],int *x,int *y)
 	}
 	if (key[0] == key[1] && key[0] == key[2]) {
 		sprintf_s(doc,30, "%s", "1色");
-		sc= 60;
+		sc= 20;
 	}
 	if (sc > 0)rldocs(doc, sc, x, y);
 	return sc;
@@ -287,7 +287,7 @@ int rl_3(int pies[],int *x,int *y)
 	}
 	if (key[0] == key[1] && key[0] == key[2]) {
 		sprintf_s(doc,30, "%s", "1柄");
-		sc+=60;
+		sc+=20;
 	}
 	if (sc > 0)rldocs(doc, sc, x, y);
 	return sc;
@@ -304,7 +304,7 @@ int rl_4(int pies[],int *x,int *y)
 	}
 	if (key[0] == key[1] && key[0] == key[2]) {
 		sprintf_s(doc,30, "%s", "3色");
-		sc= 30;
+		sc= 10;
 	}
 	if (sc > 0)rldocs(doc, sc, x, y);
 	return sc;
@@ -320,7 +320,7 @@ int rl_5(int pies[],int *x,int *y)
 	}
 	if (key[0] != key[1] && key[0] != key[2] && key[1] != key[2]) {
 		sprintf_s(doc,30, "%s", "3柄");
-		sc= 30;
+		sc= 10;
 	}
 	if (sc > 0)rldocs(doc, sc, x, y);
 	return sc;
